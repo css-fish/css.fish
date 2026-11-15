@@ -21,7 +21,7 @@
   }
 
 header, main, aside, footer {
-   background-color: none;
+   background-color: transparent;
 }
    
  main {
