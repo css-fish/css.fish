@@ -20,7 +20,11 @@
   overflow: hidden;
    }
 
-header, main, aside, footer {
+app-container {
+  grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
+}
+
+header, main, article, aside, footer {
    background-color: transparent;
 }
    
