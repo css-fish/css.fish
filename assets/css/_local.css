@@ -1,0 +1,29 @@
+/* MARK: LOCAL
+   Project-specific overrides. Blank by default.
+
+   Use:
+   1. Copy this file into your project (assets/css/_local.css).
+   2. Link it LAST in index.html, after every AutoCSS file. Load order is the
+      cascade: the last link wins.
+   3. Put your rules inside @layer local { … } below. Linked last, `local` is
+      the highest-priority AutoCSS layer; your own unlayered CSS still beats it.
+
+   Override the custom properties exposed at the top of each AutoCSS file
+   (e.g. --stars-size in stars.css) before rewriting whole rules.
+   Never edit the shared cdn files for one project; override here instead.
+*/
+
+@layer local {
+  /* Background gradient: painted on the page, under the stars */
+  :root {
+    --bg-grd: none;
+    background-image: linear-gradient(oklch(21.09% 0.0274 255.83), oklch(33.12% 0.0428 237.03)); /* #101925 → #1f3949 */
+  }
+
+  /* Center the text */
+  main article {
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+}

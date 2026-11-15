@@ -1,182 +1,82 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-  <title>CSS.Fish</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="D7460N" />
-  <meta name="description" content="Let the CSS renaissance begin!" />
-  <meta name="robots" content="index, archive" />
-  <link rel="canonical" href="https://css.fish/" />
-    <link rel="shortcut icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml;utf8,<svg 
-    xmlns='http://www.w3.org/2000/svg' 
-    preserveAspectRatio='xMidYMid meet' 
-    viewBox='0 0 380 380' 
-    fill='var(--fill-color)' 
-    fill-opacity='var(--fill-opacity)' 
-    stroke='var(--stroke-color)' 
-    stroke-opacity='var(--stroke-opacity)' 
-    stroke-width='10'>
-    <path d='m1805 3506c-60-23-285-107-499-187-214-79-381-145-370-146 10-2 237 8 504 20l485 23 230-112c127-61 337-164 468-227l237-116v-613-613l-92-110c-115-137-538-562-678-680-58-49-116-98-129-109l-25-21 23 35c80 127 111 235 111 390 0 94-13 211-26 232-3 4-22-3-42-16-20-12-52-28-71-34-147-51-285 72-285 253 0 84 20 149 75 240 22 37 39 69 36 71-2 2-26 20-52 39l-48 34 27 7c41 10 193-2 251-20 59-18 97-44 77-53-21-8-72-54-72-64 0-5 10-9 23-9 103-1 335-101 472-205l87-65 28 20c122 87 200 264 200 454v91l-37-55-36-54-36 43c-20 23-55 73-77 109l-42 67 20 22 20 22-40 48c-114 138-253 396-316 591-10 28-21 50-26 47-12-7-32-98-33-155-1-27-4-50-7-50s-36 24-75 53c-91 68-263 243-345 351-36 46-68 85-72 85-14 1-9-164 7-246 8-43 26-100 40-128 13-27 23-50 22-52-2-1-54 24-117 56-265 135-558 211-817 211-125 0-125 0-31-99 97-101 182-218 152-208-10 3-50 18-89 31-38 14-80 26-92 26h-23v-649-648l88-119c260-352 612-695 987-964 77-55 145-100 151-100 15 0 219 143 332 233 311 249 638 588 840 873l62 87v752 752l-227 111c-126 61-403 197-616 301-214 105-392 191-395 190-4 0-56-20-117-43zm510-1248c37-56 49-84 53-123 3-27 2-48 0-45-28 28-101 126-108 146-15 38-12 94 5 94 1 0 24-33 50-72z' transform='matrix(.1 0 0 -.1 0 380)'/>
-    <defs>
-      <style type='text/css'>
-        :root {
-          --fill-color: %23000000;
-          --fill-opacity: 1.0;
-          color-scheme: dark light;
-        }
-        @media (prefers-color-scheme: dark) {
-          :root {--fill-color: %23FFFFFF;}
-        }
-      </style>
-    </defs>
-  </svg>">
-  <style type="text/css">
-    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300&display=swap');
-
-    /* Config */
-    /* Pauls awesome mixin */
-    /* Styles */
-    html,
-    body {
-      height: 100dvh;
-      font-family: 'Oxanium', sans-serif;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: clamp(1rem, 4vw, 3rem);
-      overflow: hidden;
-    }
-
-    h1,
-    p {
-      transition: color 250ms;
-      line-height: 1rem;
-      text-wrap: balance;
-    }
-
-    h1:hover,
-    p:hover {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .page-bg,
-    .animation-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100dvh;
-    }
-
-    .page-bg {
-      /* background: $color-bg url("https://images.unsplash.com/photo-1562729562-679ab5311bbf?dpr=1&auto=format&fit=crop&w=1920&h=1080&q=100&cs=tinysrgb&crop=") no-repeat top center;
-  background-size: cover; */
-      background: linear-gradient(#101925, #1f3949);
-      z-index: -1;
-    }
-    
-    .page-wrapper {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.3);
-      z-index: 2;
-    }
-
-    .page-wrapper h1 {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .page-wrapper p {
-      color: rgba(255, 255, 255, 0.4);
-      font-style: italic;
-    }
-
-    .page-wrapper p span {
-      font-weight: bold;
-    }
-
-    .particle {
-      --fw: max(2560px, 100dvw);
-      --fh: max(2560px, 100dvh);
-      --star: random(0px, var(--fw), 1px) random(0px, var(--fh), 1px) #fff;
-      --stars10: var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star);
-      --stars100: var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10), var(--stars10);
-    }
-
-    .particle::after {
-      position: absolute;
-      content: "";
-      top: var(--fh);
-      width: inherit;
-      height: inherit;
-      box-shadow: inherit;
-    }
-
-    .particle-1 {
-      width: 1px;
-      height: 1px;
-      box-shadow: var(--stars100), var(--stars100), var(--stars100), var(--stars100), var(--stars100), var(--stars100);
-      @media (prefers-reduced-motion: no-preference) {
-        animation: animParticle 60s linear infinite;
-      }
-    }
-
-    .particle-2 {
-      width: 2px;
-      height: 2px;
-      box-shadow: var(--stars100), var(--stars100);
-      @media (prefers-reduced-motion: no-preference) {
-        animation: animParticle 120s linear infinite;
-      }
-    }
-
-    .particle-3 {
-      width: 3px;
-      height: 3px;
-      box-shadow: var(--stars100);
-      @media (prefers-reduced-motion: no-preference) {
-        animation: animParticle 180s linear infinite;
-      }
-    }
-
-    .particle-4 {
-      width: 1px;
-      height: 1px;
-      box-shadow: var(--stars100), var(--stars100), var(--stars100), var(--stars100);
-      @media (prefers-reduced-motion: no-preference) {
-        animation: animParticle 600s linear infinite;
-      }
-    }
-
-    @keyframes animParticle {
-      to {
-        translate: 0 calc(-1 * var(--fh));
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- PARTICLE SYSTEM -->
-  <div class="page-bg"></div>
-
-  <div class="animation-wrapper">
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
-  </div>
-
-  <div class="page-wrapper">
-    <h1>CSS.Fish</h1>
-    <p>Let the <span>CSS</span> renaissance begin</p>
-    <small><small>Coming soon to a browser near you</small></small>
-  </div>
-</body>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="author" content="D7460N" />
+    <meta name="description" content="Let the CSS renaissance begin!" />
+    <meta name="robots" content="index, archive" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://css.fish/" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 380 380' fill='var(--fill-color)' fill-opacity='var(--fill-opacity)' stroke='var(--stroke-color)' stroke-opacity='var(--stroke-opacity)' stroke-width='10'><path d='m1805 3506c-60-23-285-107-499-187-214-79-381-145-370-146 10-2 237 8 504 20l485 23 230-112c127-61 337-164 468-227l237-116v-613-613l-92-110c-115-137-538-562-678-680-58-49-116-98-129-109l-25-21 23 35c80 127 111 235 111 390 0 94-13 211-26 232-3 4-22-3-42-16-20-12-52-28-71-34-147-51-285 72-285 253 0 84 20 149 75 240 22 37 39 69 36 71-2 2-26 20-52 39l-48 34 27 7c41 10 193-2 251-20 59-18 97-44 77-53-21-8-72-54-72-64 0-5 10-9 23-9 103-1 335-101 472-205l87-65 28 20c122 87 200 264 200 454v91l-37-55-36-54-36 43c-20 23-55 73-77 109l-42 67 20 22 20 22-40 48c-114 138-253 396-316 591-10 28-21 50-26 47-12-7-32-98-33-155-1-27-4-50-7-50s-36 24-75 53c-91 68-263 243-345 351-36 46-68 85-72 85-14 1-9-164 7-246 8-43 26-100 40-128 13-27 23-50 22-52-2-1-54 24-117 56-265 135-558 211-817 211-125 0-125 0-31-99 97-101 182-218 152-208-10 3-50 18-89 31-38 14-80 26-92 26h-23v-649-648l88-119c260-352 612-695 987-964 77-55 145-100 151-100 15 0 219 143 332 233 311 249 638 588 840 873l62 87v752 752l-227 111c-126 61-403 197-616 301-214 105-392 191-395 190-4 0-56-20-117-43zm510-1248c37-56 49-84 53-123 3-27 2-48 0-45-28 28-101 126-108 146-15 38-12 94 5 94 1 0 24-33 50-72z' transform='matrix(.1 0 0 -.1 0 380)'/><defs><style type='text/css'>:root { --fill-color: %23000000; --fill-opacity: 1.0; color-scheme: dark light; } @media (prefers-color-scheme: dark) { :root { --fill-color: %23FFFFFF; } }</style></defs></svg>" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/reset.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/layout.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/media.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/carousel.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/scrolling.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/fonts.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/typography.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/inputs.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/a11y.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/transitions.css" />
+    <!-- <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/corners.css" /> -->
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/color-scheme.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/color-theme-66ccff.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/notifications.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/disclosure.css" />
+    <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/stars.css" />
+    <!-- <link rel="stylesheet" href="https://autocss-com.github.io/cdn/assets/css/diag.css"> -->
+    <!-- Overrides: add project files AFTER the AutoCSS files above. Last link wins. -->
+    <link rel="stylesheet" href="assets/css/_local.css" />
+    <title>CSS.Fish</title>
+  </head>
+  <body>
+    <app-container>
+      <app-banner></app-banner>
+      <header>
+        <app-logo></app-logo>
+        <app-user></app-user>
+      </header>
+      <nav></nav>
+      <main>
+        <article tabindex="0">
+          <h1>CSS.Fish</h1>
+          <p>Let the <strong>CSS</strong> renaissance begin</p>
+          <small><small>Coming soon to a browser near you</small></small>
+        </article>
+      </main>
+      <aside>
+        <!-- Edit form: built from the selected row's own cells (no schema). -->
+        <form>
+          <fieldset></fieldset>
+          <label>Save<input type="checkbox" name="save" hidden /></label>
+          <label>Reset<input type="checkbox" name="reset" hidden /></label>
+          <label>Delete<input type="checkbox" name="delete" hidden /></label>
+        </form>
+      </aside>
+      <footer>
+        <app-legal></app-legal>
+        <app-version></app-version>
+      </footer>
+      <app-banner></app-banner>
+      <template>
+        <section></section><article></article><h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+        <p></p><ul></ul><ol></ol><li></li><dl></dl><dt></dt><dd></dd>
+        <figure></figure><figcaption></figcaption><blockquote></blockquote>
+        <table></table><thead></thead><tbody></tbody><tr></tr><th></th><td></td>
+        <details><summary></summary></details><form></form><fieldset></fieldset>
+        <legend></legend><label><input type="radio" name="nav" /></label><input><select></select><textarea></textarea>
+        <button></button><img alt=""><time></time><address></address><search></search>
+        <dialog></dialog><hgroup></hgroup><picture></picture><source><video></video>
+        <audio></audio><track><meter></meter><progress></progress><output></output>
+        <datalist></datalist><option></option><optgroup></optgroup><caption></caption>
+        <colgroup></colgroup><col><tfoot></tfoot><abbr></abbr><cite></cite><code></code>
+        <data></data><em></em><strong></strong><kbd></kbd><mark></mark>
+        <q></q><a></a><s></s><samp></samp><small></small><sub></sub><sup></sup><var></var><wbr><hr><pre></pre><br><b></b>
+        <li tabindex="0"><label><input type="checkbox" name="row-toggle" hidden /><input type="radio" name="list-item" hidden /></label></li>
+        <app-notice popover aria-live="assertive"><label>FAQ<input type="radio" name="nav" value="faq" /></label></app-notice>
+      </template>
+    </app-container>
+  </body>
 </html>
