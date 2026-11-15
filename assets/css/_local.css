@@ -26,12 +26,12 @@ header, main, aside, footer {
    
  main {
    height: 100dvh;
-   border: solid 1px red;
+   border: solid .5rem red;
     
 
   /* Center the text */
   article {
-     border: dotted 1px green;
+     border: dotted .5rem green;
      align-content: center;
      justify-items: center;
      text-align: center;
