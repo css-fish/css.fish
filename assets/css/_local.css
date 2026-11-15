@@ -20,18 +20,16 @@
   overflow: hidden;
    }
 
-app-container {
-  grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
-}
-
 header, main, article, aside, footer {
    background-color: transparent;
 }
+
+app-container {
+  grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
    
  main {
    height: 100dvh;
    border: solid 10px red;
-    
 
   /* Center the text */
   article {
@@ -41,19 +39,20 @@ header, main, article, aside, footer {
      text-align: center;
      color: rgba(255, 255, 255, 0.4);
    
-    h1 {
-        color: rgba(255, 255, 255, 0.7);
-    }
+      h1 {
+          color: rgba(255, 255, 255, 0.7);
+      }
 
-    p {
-      font-style: italic;
+      p {
+        font-style: italic;
 
-      span {
-        font-weight: bold;
-        background: -webkit-linear-gradient(white, #38495a);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        span {
+          font-weight: bold;
+          background: -webkit-linear-gradient(white, #38495a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
-  }
+   }
  }
