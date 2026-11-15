@@ -26,10 +26,12 @@ header, main, article, aside, footer {
 
 app-container {
   grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
+}
    
  main {
    height: 100dvh;
    border: solid 10px red;
+ }
 
   /* Center the text */
   article {
@@ -38,24 +40,22 @@ app-container {
      justify-items: center;
      text-align: center;
      color: rgba(255, 255, 255, 0.4);
+  }
    
-      h1 {
+   h1 {
           color: rgba(255, 255, 255, 0.7);
          background: -webkit-linear-gradient(white, #38495a);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
       }
 
-      p {
+   p {
         font-style: italic;
+      }
 
-        span {
+   span {
           font-weight: bold;
           background: -webkit-linear-gradient(white, #38495a);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-      }
-    }
-   }
- }
