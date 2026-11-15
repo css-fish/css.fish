@@ -13,12 +13,6 @@
    Never edit the shared cdn files for one project; override here instead.
 */
 
-@layer local {
-  /* Background gradient: painted on the page, under the stars */
-  /*:root {
-    --bg-grd: none;
-    background-image: linear-gradient(oklch(21.09% 0.0274 255.83), oklch(33.12% 0.0428 237.03)); /* #101925 → #1f3949 */
-  /*}*/
 
 :root {
   height: 100%;
@@ -50,12 +44,12 @@ header, main, aside, footer {
     p {
       font-style: italic;
 
-       span {
+      span {
         font-weight: bold;
-          background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(white, #38495a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
-}
+ }
