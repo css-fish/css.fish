@@ -43,10 +43,13 @@ app-container {
   }
    
    h1 {
-          color: rgba(255, 255, 255, 0.7);
-         background: -webkit-linear-gradient(white, #38495a);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: bold;
+      background: -webkit-linear-gradient(white, #38495a);
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       }
 
    p {
