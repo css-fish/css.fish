@@ -22,10 +22,10 @@
 
 
  main {
-   
+   height: 100dvh;
+
   /* Center the text */
   article {
-     height: 100dvh;
      align-content: center;
      justify-items: center;
      text-align: center;
