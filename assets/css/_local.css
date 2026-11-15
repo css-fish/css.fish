@@ -20,10 +20,14 @@
     background-image: linear-gradient(oklch(21.09% 0.0274 255.83), oklch(33.12% 0.0428 237.03)); /* #101925 → #1f3949 */
   }
 
-
+header, main, aside, footer {
+   background-color: none;
+}
+   
  main {
    height: 100dvh;
    border: solid 1px red;
+    
 
   /* Center the text */
   article {
