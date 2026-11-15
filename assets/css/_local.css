@@ -20,12 +20,16 @@
     background-image: linear-gradient(oklch(21.09% 0.0274 255.83), oklch(33.12% 0.0428 237.03)); /* #101925 → #1f3949 */
   }
 
+
+ main {
+   
   /* Center the text */
-  main article {
-   align-content: center;
-   justify-items: center;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.4);
+  article {
+     height: 100dvh;
+     align-content: center;
+     justify-items: center;
+     text-align: center;
+     color: rgba(255, 255, 255, 0.4);
    
     h1 {
         color: rgba(255, 255, 255, 0.7);
@@ -33,9 +37,10 @@
 
     p {
       font-style: italic;
-    
-     span {
-      font-weight: bold;
+
+       span {
+        font-weight: bold;
+      }
     }
   }
 }
