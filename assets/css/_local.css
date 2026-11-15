@@ -15,10 +15,16 @@
 
 @layer local {
   /* Background gradient: painted on the page, under the stars */
-  :root {
+  /*:root {
     --bg-grd: none;
     background-image: linear-gradient(oklch(21.09% 0.0274 255.83), oklch(33.12% 0.0428 237.03)); /* #101925 → #1f3949 */
-  }
+  /*}*/
+
+:root {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+   }
 
 header, main, aside, footer {
    background-color: transparent;
