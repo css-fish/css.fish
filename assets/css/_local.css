@@ -14,11 +14,11 @@
 */
 
 
-:root {
+html {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
-   }
+}
 
 header, main, article, aside, footer {
    background-color: transparent;
@@ -30,12 +30,12 @@ app-container {
    
  main {
    height: 100dvh;
-   border: solid 10px red;
+   /*border: solid 10px red;*/
  }
 
   /* Center the text */
   article {
-     border: solid 10px green;
+     /*border: solid 10px green;*/
      align-content: center;
      justify-items: center;
      text-align: center;
