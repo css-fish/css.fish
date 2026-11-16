@@ -29,12 +29,14 @@ app-container {
 }
    
  main {
+   display: grid
    height: 100dvh;
    /*border: solid 10px red;*/
  }
 
   /* Center the text */
   article {
+     display: grid;
      /*border: solid 10px green;*/
      align-content: center;
      justify-items: center;
