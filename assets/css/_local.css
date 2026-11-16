@@ -15,7 +15,6 @@ main {
 
 article {
    display: grid;
-   border: solid 10px green;
    align-content: center;
    justify-items: center;
    text-align: center;
