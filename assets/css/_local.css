@@ -52,13 +52,3 @@ article {
   h1, p {
     overflow-wrap: anywhere;
   }
-   
-/* h1 {
-   color: rgba(255, 255, 255, 0.7);
-   https://anticode.dev/designs/fluid-typography
-   Never smaller than 2rem, never larger than 4.5rem, 
-      and in between, 1.2rem plus 3% of the viewport width.
-      The browser computes the middle value and clamps it to the bounds.
-   font-size: clamp(2rem, 1.2rem + 3vw, 4.5rem);
-   
-} */
