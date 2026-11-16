@@ -1,14 +1,8 @@
-html, body, app-container, header, main, article, aside, footer {
-   background-color: transparent !important;
-}
-
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)!important;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
 }
-
-
 
 app-container {
   grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
@@ -17,38 +11,36 @@ app-container {
  main {
    display: grid;
    height: 100dvh;
-   /*border: solid 10px red;*/
  }
 
-  /* Center the text */
-  article {
-     display: grid;
-     /*border: solid 10px green;*/
-     align-content: center;
-     justify-items: center;
-     text-align: center;
-     color: rgba(255, 255, 255, 0.4);
-  }
+article {
+   display: grid;
+   border: solid 10px green;
+   align-content: center;
+   justify-items: center;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.4);
+}
    
-   h1 {
-      color: rgba(255, 255, 255, 0.7);
-      /* https://anticode.dev/designs/fluid-typography */
-      /* Never smaller than 2rem, never larger than 4.5rem, and in between, 1.2rem plus 3% of the viewport width.
-      The browser computes the middle value and clamps it to the bounds.*/
-      font-size: clamp(2rem, 1.2rem + 3vw, 4.5rem);
-      font-weight: 300;
-      background: -webkit-linear-gradient(white, #38495a);
-      background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      }
+h1 {
+   color: rgba(255, 255, 255, 0.7);
+   /* https://anticode.dev/designs/fluid-typography */
+   /* Never smaller than 2rem, never larger than 4.5rem, and in between, 1.2rem plus 3% of the viewport width.
+   The browser computes the middle value and clamps it to the bounds.*/
+   font-size: clamp(2rem, 1.2rem + 3vw, 4.5rem);
+   font-weight: 300;
+   background: -webkit-linear-gradient(white, #38495a);
+   background-clip: text;
+   text-fill-color: transparent;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
 
-   p {
-      font-style: italic;
-      background: -webkit-linear-gradient(white, #38495a);
-      background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      }
+p {
+   font-style: italic;
+   background: -webkit-linear-gradient(white, #38495a);
+   background-clip: text;
+   text-fill-color: transparent;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
