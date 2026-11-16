@@ -29,7 +29,7 @@ app-container {
 }
    
  main {
-   display: grid
+   display: grid;
    height: 100dvh;
    /*border: solid 10px red;*/
  }
