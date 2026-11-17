@@ -1,0 +1,125 @@
+/* MARK: STARS
+   Animated star field. 4 layers. Each layer = one host's ::before (stars) +
+   ::after (loop copy, one field below).
+   random() version: box-shadow stars; star size = the pseudo-element's box size.
+   Fallback version: an SVG star field (stars-fallback-N.svg), switched on by
+   support.css only where random() is missing; everywhere else
+   --stars-fallback-N is unset, so the SVG is never downloaded.
+*/
+@layer stars {
+  /* MARK: STAR ATTRIBUTES — adjust here */
+  :is(html, body, app-container, main)::before,
+  :is(html, body, app-container, main)::after {
+    --stars-color: CanvasText; /* follows light/dark */
+    --stars-field: 2560px; /* minimum field size; grows with the viewport */
+  }
+
+  /* Layer 1: 600 stars */
+  html::before,
+  html::after {
+    --stars-key: --stars-1;
+    --stars-size: 1px;
+    --stars-duration: 60s;
+    background-image: var(--stars-fallback-1);
+  }
+
+  /* Layer 2: 200 stars */
+  body::before,
+  body::after {
+    --stars-key: --stars-2;
+    --stars-size: 2px;
+    --stars-duration: 120s;
+    background-image: var(--stars-fallback-2);
+  }
+
+  /* Layer 3: 100 stars */
+  app-container::before,
+  app-container::after {
+    --stars-key: --stars-3;
+    --stars-size: 3px;
+    --stars-duration: 180s;
+    background-image: var(--stars-fallback-3);
+  }
+
+  /* Layer 4: 400 stars */
+  main::before,
+  main::after {
+    --stars-key: --stars-4;
+    --stars-size: 1px;
+    --stars-duration: 600s;
+    background-image: var(--stars-fallback-4);
+  }
+
+  /* MARK: STAR FIELD — both versions */
+  :is(html, body, app-container, main)::before,
+  :is(html, body, app-container, main)::after {
+    --stars-inline: max(var(--stars-field), 100dvw);
+    --stars-block: max(var(--stars-field), 100dvh);
+
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    inline-size: var(--stars-inline);
+    block-size: var(--stars-block);
+    background-size: 100% 100%;
+  }
+
+  :is(html, body, app-container, main)::after {
+    top: var(--stars-block);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :is(html, body, app-container, main)::before,
+    :is(html, body, app-container, main)::after {
+      animation: stars-drift var(--stars-duration) linear infinite;
+    }
+  }
+
+  @keyframes stars-drift {
+    to {
+      translate: 0 calc(-1 * var(--stars-block));
+    }
+  }
+
+  /* MARK: STAR ENGINE — random() version
+     One star (--star) repeated. ::before and ::after of a host share
+     positions via the layer's random key, so the ::after copy, one field
+     below, makes the loop seamless.
+  */
+  @supports (box-shadow: random(--stars property-index-scoped, 0px, 1px, 1px) random(--stars property-index-scoped, 0px, 1px, 1px) red) {
+    html::before,
+    html::after {
+      box-shadow: var(--stars-100), var(--stars-100), var(--stars-100), var(--stars-100), var(--stars-100), var(--stars-100);
+    }
+
+    body::before,
+    body::after {
+      box-shadow: var(--stars-100), var(--stars-100);
+    }
+
+    app-container::before,
+    app-container::after {
+      box-shadow: var(--stars-100);
+    }
+
+    main::before,
+    main::after {
+      box-shadow: var(--stars-100), var(--stars-100), var(--stars-100), var(--stars-100);
+    }
+
+    :is(html, body, app-container, main)::before,
+    :is(html, body, app-container, main)::after {
+      --star:
+        random(var(--stars-key) property-index-scoped, 0px, var(--stars-inline), 1px)
+        random(var(--stars-key) property-index-scoped, 0px, calc(var(--stars-block) - var(--stars-size)), 1px);
+      --stars-10: var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star), var(--star);
+      --stars-100: var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10), var(--stars-10);
+
+      inline-size: var(--stars-size);
+      block-size: var(--stars-size);
+      color: var(--stars-color);
+    }
+  }
+}
