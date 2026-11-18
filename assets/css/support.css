@@ -5,13 +5,4 @@
    applies, so browsers that support the feature download nothing extra.
 */
 @layer support {
-  /* MARK: random() — stars.css fallback (stars-fallback-1…4.svg) */
-  @supports not (box-shadow: random(--stars property-index-scoped, 0px, 1px, 1px) random(--stars property-index-scoped, 0px, 1px, 1px) red) {
-    :root {
-      --stars-fallback-1: url("../images/stars-fallback-1.svg");
-      --stars-fallback-2: url("../images/stars-fallback-2.svg");
-      --stars-fallback-3: url("../images/stars-fallback-3.svg");
-      --stars-fallback-4: url("../images/stars-fallback-4.svg");
-    }
-  }
 }
