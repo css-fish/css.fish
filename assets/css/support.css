@@ -1,8 +1,0 @@
-/* MARK: SUPPORT
-   Pure CSS feature detection. Always loaded. No JS.
-   One @supports not block per feature. Each block switches on that feature's
-   fallback resources (url() files). A url() downloads only where its rule
-   applies, so browsers that support the feature download nothing extra.
-*/
-@layer support {
-}
